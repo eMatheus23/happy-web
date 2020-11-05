@@ -61,12 +61,16 @@ function deleteField(event) {
     if(fieldsContainer.length < 2) {
         // limpar o valor do campo
         span.parentNode.children[0].value = ""
+        toggleDeleteButton();
 
         return
     }
 
     // deletar o campo
     span.parentNode.remove();
+    
+    // ativar o toggleDeleteButton
+    toggleDeleteButton();
 }
 
 // select yes or no
@@ -83,4 +87,21 @@ function toggleSelect(event) {
     const input = document.querySelector('[name="open_on_weekends"]')
     
     input.value = button.dataset.value
+}
+
+function toggleDeleteFieldButton() {
+    // buscar o input e span (delete button)
+    const input = document.querySelector('[name="images"]')
+    const span = document.querySelector('.new-upload span')
+    const fieldsContainer = document.querySelectorAll(".new-upload");
+
+    //verificar se o input está vazio
+    if (input.value !== '') {
+        // se não vazio, aparecer o botao
+        span.classList.remove('empty-input')
+    } else if (fieldsContainer.length < 2) {
+        span.classList.add('empty-input')
+    }
+
+    // se não, colocar o span
 }

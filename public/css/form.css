@@ -111,3 +111,7 @@ fieldset legend {
 
     cursor: pointer;
 }
+
+.new-upload .empty-input {
+    display: none;
+}

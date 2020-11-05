@@ -84,13 +84,13 @@
               <label for="images">Foto</label>
 
               <div class="images-upload" id="images">
-                <div class="new-upload">
+                <div class="new-upload" onkeyup="toggleDeleteFieldButton()">
                   <input
                     name="images"
                     placeholder="Cole o link da foto aqui"
                     required
                   />
-                  <span onclick="deleteField(event)">
+                  <span onclick="deleteField(event)" class="empty-input">
                     <img
                       src="public/images/remove-file.svg"
                       alt="Remover Foto"
